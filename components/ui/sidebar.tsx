@@ -63,11 +63,30 @@ function SidebarProvider({
   const isMobile = useIsMobile();
   const [openMobile, setOpenMobile] = React.useState(false);
 
-  const [_open, _setOpen] = React.useState(defaultOpen);
+  const getInitialOpenState = React.useCallback(() => {
+    if (typeof window !== 'undefined') {
+      const savedState = localStorage.getItem('sidebar-state');
+      return savedState ? JSON.parse(savedState) : defaultOpen;
+    }
+    return defaultOpen;
+  }, [defaultOpen]);
+
+  const [_open, _setOpen] = React.useState(defaultOpen); 
+
+  React.useEffect(() => {
+    _setOpen(getInitialOpenState());
+  }, [getInitialOpenState]);
+
   const open = openProp ?? _open;
+  
   const setOpen = React.useCallback(
     (value: boolean | ((value: boolean) => boolean)) => {
       const openState = typeof value === 'function' ? value(open) : value;
+      
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('sidebar-state', JSON.stringify(openState));
+      }
+      
       if (setOpenProp) {
         setOpenProp(openState);
       } else {
@@ -135,7 +154,6 @@ function SidebarProvider({
     </SidebarContext.Provider>
   );
 }
-
 function Sidebar({
   side = 'left',
   variant = 'sidebar',
