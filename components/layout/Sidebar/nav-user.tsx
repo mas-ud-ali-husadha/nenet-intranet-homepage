@@ -33,7 +33,7 @@ export function NavUser({
             state == 'collapsed' ? 'h-8 w-8 outline-none' : 'h-16 w-16'
           }`}
         >
-          <AvatarImage src={user.avatar} alt={user.name} />
+          <AvatarImage src={user.avatar} alt={user.name} className='object-cover' />
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <div
