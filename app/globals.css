@@ -37,7 +37,7 @@
   --card-3: var(--color-slate-700);
   --sidebar: var(--color-gray-100);
   --sidebar-foreground: oklch(0.145 0 0);
-  --card-border: var(--color-slate-700);
+  --card-border: var(--color-gray-300);
   --btn: var(--color-slate-900);
   --btn-2: var(--color-gray-200);
   --btn-hover: var(--color-slate-800);

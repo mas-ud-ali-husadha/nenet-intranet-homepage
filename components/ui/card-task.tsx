@@ -74,7 +74,7 @@ const TaskCard = ({
   return (
     <div
       className={cn(
-        `bg-card w-full rounded-lg shadow-md border-l-4 border-card-border hover:shadow-lg transition-shadow duration-200`,
+        `bg-card w-full rounded-xl shadow-md border-l-4 border-card-border hover:shadow-lg transition-shadow duration-200`,
         onClick ? 'cursor-pointer' : '',
         selectedTaskIds ? 'border-l-4 border-card-border' : 'border-none'
       )}

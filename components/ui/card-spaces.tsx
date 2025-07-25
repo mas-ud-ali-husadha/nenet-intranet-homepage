@@ -11,7 +11,7 @@ const CardSpaces = ({
   description: string;
 }) => {
   return (
-    <Link href="#" className="cursor-pointer bg-card px-5 py-4 w-full rounded-lg shadow-md border-l-4 border-card-border hover:shadow-lg transition-shadow duration-200">
+    <Link href="#" className="cursor-pointer bg-card px-5 py-4 w-full rounded-xl shadow-md border-l-4 border-card-border hover:shadow-lg transition-shadow duration-200">
       <div className="flex items-start gap-4">
         <div className="w-15 h-15  flex justify-center items-center rounded-xl overflow-hidden flex-shrink-0 bg-sidebar">
           {icon}

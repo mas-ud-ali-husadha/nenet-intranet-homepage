@@ -1,6 +1,7 @@
-import { Laptop2, Mic, Paperclip, User2 } from 'lucide-react';
+import { ChevronRight, Laptop2, Mic, Paperclip, User2 } from 'lucide-react';
 import React from 'react';
 import CardSpaces from '../ui/card-spaces';
+import Link from 'next/link';
 
 const mockData = [
   {
@@ -35,6 +36,9 @@ const Spaces = () => {
     <div className="flex flex-col gap-2">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-base font-medium">Spaces</h2>
+        <Link href="#" className="text-xs flex gap-1 items-center justify-center">
+          View more <ChevronRight size={15} />
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
