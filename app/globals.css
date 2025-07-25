@@ -113,7 +113,6 @@
   opacity: 0;
 }
 
-/* Animation trigger classes */
 .animate .container-fade-in {
   transform: scale(1);
   opacity: 1;

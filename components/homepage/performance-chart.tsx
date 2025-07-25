@@ -31,11 +31,11 @@ const chartData: ChartEntry[] = [
   { time: '07', thisMonth: 8, lastMonth: 6 },
 ];
 
-const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({
+const CustomTooltip = ({
   active,
   payload,
   label,
-}) => {
+}: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
     const thisMonth =
       payload.find((p) => p.dataKey === 'thisMonth')?.value ?? 0;
@@ -44,7 +44,7 @@ const CustomTooltip: React.FC<TooltipProps<ValueType, NameType>> = ({
 
     return (
       <div className="bg-gray-800 text-white p-3 rounded-lg shadow-lg text-sm">
-        <div className="font-medium mb-1">{label} May 2023</div>
+        <div className="font-medium mb-1">{label} July 2025</div>
         <div className="space-y-1">
           <div>
             This month: <span className="font-medium">{thisMonth}h</span>
@@ -64,7 +64,7 @@ export default function PerformanceChart() {
     <div className="w-full  mx-auto">
       <div className="mb-6">
         <div className="flex items-center justify-between mb-2">
-          <h2 className="text-base font-medium ">Performance</h2>
+          <h2 className="text-base font-medium ">Your Performance</h2>
         </div>
       </div>
 
@@ -117,7 +117,11 @@ export default function PerformanceChart() {
               stroke="var(--color-chart-this-month)"
               strokeWidth={2}
               fill="url(#thisMonthGradient)"
-              dot={{ fill: 'var(--color-chart-this-month)', strokeWidth: 2, r: 3 }}
+              dot={{
+                fill: 'var(--color-chart-this-month)',
+                strokeWidth: 2,
+                r: 3,
+              }}
               activeDot={{ r: 5, fill: 'var(--color-chart-this-month)' }}
             />
             <Area
