@@ -1,0 +1,142 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-desc: var(--desc);
+  --color-foreground-2: var(--foreground-2);
+  --font-sans: var(--font-jakarta-sans);
+  --font-mono: var(--font-jakarta-mono);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-card-3: var(--card-3);
+  --color-card-border: var(--card-border);
+  --color-btn: var(--btn);
+  --color-btn-hover: var(--btn-hover);
+  --color-btn-2: var(--btn-2);
+  --color-btn-2-hover: var(--btn-2-hover);
+  --color-chart: var(--chart);
+  --color-chart-this-month: var(--chart-this-month);
+  --color-chart-last-month: var(--chart-last-month);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --desc: var(--color-gray-500);
+  --foreground-2: var(--color-slate-900);
+  --card: oklch(1 0 0);
+  --card-2: var(--color-slate-800);
+  --card-3: var(--color-slate-700);
+  --sidebar: var(--color-gray-100);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --card-border: var(--color-slate-700);
+  --btn: var(--color-slate-900);
+  --btn-2: var(--color-gray-200);
+  --btn-hover: var(--color-slate-800);
+  --btn-2-hover: var(--color-gray-100);
+  --chart: var(--color-gray-200);
+  --chart-this-month: var(--color-slate-700);
+  --chart-last-month: var(--color-green-400);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --foreground-2: var(--color-slate-300);
+  --desc: var(--color-neutral-400);
+  --card: var(--color-neutral-800);
+  --card-2: var(--color-neutral-800);
+  --card-3: var(--color-neutral-600);
+  --card-border: var(--color-neutral-700);
+
+  --ring: oklch(0.556 0 0);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+
+  --btn: var(--color-neutral-800);
+  --btn-2: var(--color-neutral-600);
+  --btn-hover: var(--color-neutral-700);
+  --btn-2-hover: var(--color-neutral-500);
+
+  --chart: var(--color-neutral-900);
+  --chart-this-month: var(--color-neutral-400);
+  --chart-last-month: var(--color-green-700);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground mr-0;
+  }
+}
+
+.custom-shadow {
+  box-shadow: 7px 0px 8px -3px rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 7px 0px 8px -3px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 7px 0px 8px -3px rgba(0, 0, 0, 0.03);
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+.progress-dot {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.5s ease-in-out;
+  transform: scale(0);
+  opacity: 0;
+}
+.progress-text {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease;
+  transform: scale(0);
+  opacity: 0;
+}
+.info-text {
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+.container-fade-in {
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+/* Animation trigger classes */
+.animate .container-fade-in {
+  transform: scale(1);
+  opacity: 1;
+}
+.animate .progress-dot {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+.animate .progress-text {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+.animate .info-text {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 1s;
+}
+
+.quick-link-item {
+  transition: transform 0.2s ease-in-out;
+}
+.quick-link-item:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
