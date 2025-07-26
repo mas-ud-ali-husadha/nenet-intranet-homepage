@@ -9,7 +9,6 @@ import NotificationsList from '@/components/homepage/HeaderTools/notification';
 const Header = () => {
   return (
     <header className="flex z-30 absolute top-7 px-4 md:px-9 justify-between w-full items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-      {/* Left side: Sidebar trigger & Search */}
       <div className="flex items-center gap-2 w-full max-w-[60%] sm:max-w-[70%]">
         <SidebarTrigger />
         <div className="hidden sm:block w-full">
@@ -17,18 +16,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Right side: Tools */}
       <div className="flex items-center gap-3 sm:gap-4">
-        {/* Notifications */}
         <NotificationsList />
-
-        {/* Launchpad */}
         <LaunchPad />
-
-        {/* Dark mode toggle */}
         <DarkModeToggle />
-
-        {/* Users list */}
         <UsersList />
       </div>
     </header>

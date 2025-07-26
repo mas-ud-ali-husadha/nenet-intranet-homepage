@@ -92,9 +92,9 @@ const Schedules = () => {
 
             {/* Timeline with dot and line */}
             <div className="flex-shrink-0 flex flex-col items-center">
-              <div className={`w-2 h-2 rounded-full bg-card-3 mt-2 z-10`}></div>
+              <div className={`w-2 h-2 rounded-full bg-gray-600 dark:bg-neutral-400 mt-2 z-10`}></div>
               {index < scheduleItems.length - 1 && (
-                <div className="w-px border h-12 border-gray-300 dark:border-neutral-400 border-dashed mt-2"></div>
+                <div className="w-px border h-12 border-gray-300 dark:border-neutral-700 border-dashed mt-2"></div>
               )}
             </div>
 
@@ -103,7 +103,7 @@ const Schedules = () => {
               <h2 className="font-medium text-sm leading-tight mb-1">
                 {item.title}
               </h2>
-              <p className="text-xs">{item.department}</p>
+              <p className="text-xs text-desc">{item.department}</p>
             </div>
 
             <Tooltip>

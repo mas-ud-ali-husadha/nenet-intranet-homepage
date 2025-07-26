@@ -270,14 +270,14 @@ function SidebarTrigger({
     <div
       data-sidebar="trigger"
       data-slot="sidebar-trigger"
-      className={cn('size-7 transition-colors cursor-pointer hover:text-btn-hover', className)}
+      className={cn('transition-colors p-2 cursor-pointer rounded-full hover:bg-btn-2', className)}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
       }}
       {...props}
     >
-      <PanelLeftIcon />
+      <PanelLeftIcon size={20} />
     </div>
   );
 }
